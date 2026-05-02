@@ -1,0 +1,18 @@
+:root {
+  /* ==== COLORS ==== */
+  /* Background */
+  --primary-background-color: #0b0f14;
+  --card-backround-color: #111827;
+
+  /* Text */
+  --primary-text-color: #e5e7eb;
+
+  /* Accents */
+  --cyan-accent: #22d3ee;
+  --pink-accent: #f472b6;
+  --green-accent: #22c55e;
+
+  /* Success/Error */
+  --success: #34d399;
+  --error: #f87171;
+}
