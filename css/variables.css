@@ -1,4 +1,6 @@
 :root {
+  /* === FONT ==== */
+  --font: "Inter", sans-serif;
   /* ==== COLORS ==== */
   /* Background */
   --primary-background-color: #0b0f14;
