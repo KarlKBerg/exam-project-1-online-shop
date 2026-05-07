@@ -13,11 +13,55 @@
       src="https://kit.fontawesome.com/b5a5784c82.js"
       crossorigin="anonymous"
     ></script>
+    <!-- ==== FONT ==== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- ==== LINKS ==== -->
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="style.css" />
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Home</title>
   </head>
-  <body></body>
+  <body>
+    <!-- ==== HEADER ==== -->
+    <!-- DESKTOP -->
+    <header>
+      <!-- Logo -->
+      <a href="index.html"
+        ><h2 class="logo">Shop<span class="logo-part">Me</span></h2></a
+      >
+
+      <!-- Search -->
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" class="search-input" />
+      </div>
+      <!-- Nav -->
+      <nav class="main-nav">
+        <a class="nav-item" href="favourites/index.html">
+          <i class="fa-regular fa-heart"></i>
+          <p class="nav-desc">Favourites</p>
+        </a>
+        <a class="nav-item" href="account/login.html">
+          <i class="fa-regular fa-user"></i>
+          <p class="nav-desc">Login</p>
+        </a>
+        <a class="nav-item" href="cart/cart.html">
+          <i class="fa-regular fa-cart-shopping"></i>
+          <p class="nav-desc">Shopping</p>
+        </a>
+      </nav>
+
+      <!-- Hamburger menu -->
+      <a href="" class="hamburger-menu hidden">
+        <i class="fa fa-bars"></i>
+      </a>
+    </header>
+    <!-- END DESKTOP -->
+    <!-- ==== END HEADER ==== -->
+  </body>
 </html>
