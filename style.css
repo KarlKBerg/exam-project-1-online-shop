@@ -88,6 +88,8 @@ main {
 }
 .carousel-product img {
   width: 50%;
+  height: 80vh;
+  object-fit: cover;
 }
 .carousel-product-info {
   width: 50%;
@@ -118,6 +120,9 @@ main {
   font-weight: 600;
   display: flex;
   justify-content: center;
+}
+.add-to-cart-btn:hover {
+  background-color: var(--green-hover);
 }
 /* ==== PRODUCT SLIDER ==== */
 section {
