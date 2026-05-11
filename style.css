@@ -133,6 +133,10 @@ section {
   gap: 1.6rem;
   font-size: 3.2rem;
 }
+.slider-container {
+  display: flex;
+  gap: 3.2rem;
+}
 /* Product card */
 .product-card {
   background-color: #111827;
