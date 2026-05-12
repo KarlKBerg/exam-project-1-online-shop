@@ -346,8 +346,6 @@ footer ul a:hover {
 .reviews h2 {
   border-bottom: 1px solid white;
 }
-.review {
-}
 .review-heading {
   display: flex;
   gap: 4rem;
