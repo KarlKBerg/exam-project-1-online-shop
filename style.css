@@ -183,7 +183,6 @@ section {
   font-weight: 400;
   line-height: 156.035%;
   letter-spacing: 0.32px;
-  margin: 0 auto;
 }
 .newsletter-description-and-form form {
   display: flex;
@@ -272,6 +271,94 @@ footer ul a:hover {
   justify-content: center;
   margin-top: 3.2rem;
   align-items: center;
+}
+/* ==== PRODUCT PAGE ==== */
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  gap: 1.6rem;
+  padding: 0 4rem;
+  margin-top: 4rem;
+}
+.breadcrumbs .breadcrumb-inactive {
+  text-decoration: underline;
+}
+/* Product view */
+.product-container {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.product-description {
+  font-size: 1.6rem;
+  width: 48rem;
+}
+.amount-select {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 2.4rem;
+  align-items: center;
+}
+.amount-select i:hover {
+  color: var(--cyan-accent);
+  cursor: pointer;
+}
+.product-price {
+  font-size: 3.2rem;
+}
+.product-container a {
+  font-size: 3.2rem;
+  font-weight: 600;
+  padding: 0.8rem 0;
+  background-color: var(--green-accent);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: black;
+}
+.product-container a:hover {
+  background-color: var(--green-hover);
+}
+.product-container img {
+  height: 80rem;
+  width: 80rem;
+  object-fit: cover;
+}
+.rating {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  color: yellow;
+}
+/* Reviews */
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-top: 4rem;
+}
+.reviews h2 {
+  border-bottom: 1px solid white;
+}
+.review {
+}
+.review-heading {
+  display: flex;
+  gap: 4rem;
+  font-size: 2.4rem;
+  align-items: center;
+}
+.review-text {
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid white;
 }
 /* ==== HEADINGS ==== */
 .section-heading {
