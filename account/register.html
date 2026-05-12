@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ==== META ==== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Register as a user on ShopMe." />
+    <!-- ==== ICONS ==== -->
+    <script
+      src="https://kit.fontawesome.com/b5a5784c82.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ==== FONT ==== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ==== LINKS ==== -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- ==== TITLE ==== -->
+    <title>ShopMe | Register</title>
+  </head>
+  <body>
+    <!-- ==== HEADER ==== -->
+    <header>
+      <!-- DESKTOP -->
+      <!-- Logo -->
+      <a href="../index.html"
+        ><h2 class="logo">Shop<span class="logo-part">Me</span></h2></a
+      >
+      <!-- Search -->
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" class="search-input" />
+      </div>
+      <!-- Nav -->
+      <nav class="main-nav">
+        <a class="nav-item" href="../favourites/index.html">
+          <i class="fa-regular fa-heart"></i>
+          <p class="nav-desc">Favourites</p>
+        </a>
+        <a class="nav-item" href="../account/login.html">
+          <i class="fa-regular fa-user"></i>
+          <p class="nav-desc">Login</p>
+        </a>
+        <a class="nav-item" href="../cart/cart.html">
+          <i class="fa-regular fa-cart-shopping"></i>
+          <p class="nav-desc">Shopping</p>
+        </a>
+      </nav>
+      <!-- END DESKTOP -->
+
+      <!-- MOBILE -->
+      <!-- Hamburger menu -->
+      <a href="" class="hamburger-menu hidden">
+        <i class="fa fa-bars"></i>
+      </a>
+      <!-- END MOBILE -->
+    </header>
+    <!-- ==== END HEADER ==== -->
+    <!-- ==== MAIN ==== -->
+    <main>
+      <section class="register">
+        <h2 class="section-heading">Register</h2>
+        <form action="#">
+          <div class="name">
+            <label for="name">Name *</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="email">
+            <label for="email">Email *</label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="psw">
+            <label for="password">Password *</label>
+            <input type="password" name="password" required />
+          </div>
+          <div class="psw">
+            <label for="re-password">Re-enter password *</label>
+            <input type="password" name="re-password" required />
+          </div>
+        </form>
+
+        <div class="field-check">
+          <div class="check">
+            <i class="fa-solid fa-circle"></i>
+            <p>Email must contain @stud.noroff.no</p>
+          </div>
+          <div class="check">
+            <i class="fa-solid fa-circle"></i>
+            <p>Password must contain special characters</p>
+          </div>
+          <div class="check">
+            <i class="fa-solid fa-circle"></i>
+            <p>Password must contain 8 or more characters</p>
+          </div>
+        </div>
+        <a href="../index.html" class="register-btn">Register</a>
+        <a href="register.html"
+          >Already have an account?<span id="login-text">Login</span></a
+        >
+      </section>
+    </main>
+    <!-- ==== END MAIN ==== -->
+    <!-- ==== FOOTER ==== -->
+    <footer>
+      <div class="footer-main">
+        <div class="footer-newsletter">
+          <h2 class="footer-heading">Newsletter</h2>
+          <p class="description">
+            Stay in the loop with our latest products, exclusive offers,<br />
+            and special promotions.<br />
+            Subscribe to our newsletter and never miss out!
+          </p>
+          <form action="#">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <a href="#" class="newsletter-signup-btn">Sign-up</a>
+          </form>
+        </div>
+        <div class="footer-navigation">
+          <h2 class="footer-heading">Navigation</h2>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../account/login.html">Login</a></li>
+            <li><a href="../account/register.html">Register</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="../favourites/index.html">Favourites</a></li>
+          </ul>
+        </div>
+        <div class="footer-customer-service">
+          <h2 class="footer-heading">Customer service</h2>
+          <ul>
+            <li>
+              <a href="../customer-service/contact-us.html">Contact us</a>
+            </li>
+            <li><a href="../customer-service/faq.html">FAQ</a></li>
+            <li>
+              <a href="../customer-service/shipping-and-delivery.html"
+                >Shipping and delivery</a
+              >
+            </li>
+            <li>
+              <a href="../customer-service/return-and-refunds.html"
+                >Return and refunds</a
+              >
+            </li>
+            <li>
+              <a href="../customer-service/order-tracking.html"
+                >Order tracking</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-about-us">
+          <h2 class="footer-heading">About us</h2>
+          <ul>
+            <li><a href="../about-us/about-us.html">About us</a></li>
+            <li><a href="../about-us/careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-legal-and-policies">
+          <h2 class="footer-heading">Legal and policies</h2>
+          <ul>
+            <li>
+              <a href="../leagal-and-policies/privacy.html">Privacy policy</a>
+            </li>
+            <li>
+              <a href="../leagal-and-policies/tos.html">Terms of service</a>
+            </li>
+            <li>
+              <a href="../leagal-and-policies/accessibillity.html"
+                >Accessibility Statement</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-socials">
+          <h2 class="footer-heading">Socials</h2>
+          <div class="social-icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-square-twitter"></i>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <i class="fa-regular fa-copyright"></i>
+        <p>ShopMe 2026. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- ==== END FOOTER ==== -->
+  </body>
+</html>
