@@ -367,34 +367,40 @@ footer ul a:hover {
   margin-top: 2.4rem;
   font-size: 1.6rem;
 }
-/* ==== LOGIN PAGE ==== */
-.login {
+/* ==== LOGIN and register PAGE ==== */
+.login,
+.register {
   margin: 0 auto;
 }
-.login h2 {
+.login h2,
+.register h2 {
   text-align: center;
   margin-top: 4rem;
 }
-.login form {
+.login form,
+.register form {
   margin-top: 8rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
 }
 .email,
-.psw {
+.psw,
+.name {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 .email input,
-.psw input {
+.psw input,
+.name input {
   background-color: white;
   padding: 0.4rem;
   border-radius: 0.5rem;
   min-width: 50rem;
 }
-.login form label {
+.login form label,
+.register form label {
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -402,16 +408,19 @@ footer ul a:hover {
   display: flex;
   gap: 0.8rem;
 }
-.login a {
+.login a,
+.register a {
   display: flex;
   justify-content: center;
   margin-top: 3.2rem;
 }
-.login #register-text {
+.login #register-text,
+.register #register-text {
   text-decoration: underline;
   margin-left: 0.4rem;
 }
-.login-btn {
+.login-btn,
+.register-btn {
   font-size: 1.6rem;
   font-weight: 600;
   padding: 0.4rem;
@@ -420,6 +429,29 @@ footer ul a:hover {
   border-radius: 0.5rem;
   color: black;
   margin: 0 auto;
+}
+.login-btn:hover {
+  background-color: var(--green-hover);
+}
+.register-btn {
+  background-color: var(--cyan-accent);
+}
+.register-btn:hover {
+  background-color: var(--cyan-hover);
+}
+.field-check {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.check {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+}
+.check i {
+  color: red;
 }
 /* ==== HEADINGS ==== */
 .section-heading {
