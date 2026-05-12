@@ -358,6 +358,16 @@ footer ul a:hover {
   padding-bottom: 1.6rem;
   border-bottom: 1px solid white;
 }
+/* ==== FAVOURITES PAGE ==== */
+.favourites .section-heading {
+  margin-top: 8rem;
+  border-bottom: 1px solid white;
+}
+.favourite-products-container p {
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+}
+
 /* ==== HEADINGS ==== */
 .section-heading {
   font-size: 3.2rem;
