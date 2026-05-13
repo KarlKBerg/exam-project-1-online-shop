@@ -453,6 +453,82 @@ footer ul a:hover {
 .check i {
   color: red;
 }
+/* ==== CART ==== */
+.cart-container {
+  margin-top: 4rem;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  padding-bottom: 4rem;
+}
+.img-title-amount {
+  display: flex;
+  gap: 4rem;
+}
+.title-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img-title-amount img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+.delete-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+.delete-price p {
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+.total-price {
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+.discount-code {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 4rem;
+}
+.discount-input {
+  display: flex;
+  gap: 2.4rem;
+}
+.discount-code input {
+  background-color: #fff;
+  width: 23rem;
+  padding: 0.4rem;
+}
+.discount-btn {
+  font-size: 1.6rem;
+  padding: 0 1.6rem;
+  color: #000;
+  background-color: var(--green-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.checkout-btn {
+  font-size: 2.4rem;
+  background-color: var(--cyan-accent);
+  border-radius: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
 /* ==== HEADINGS ==== */
 .section-heading {
   font-size: 3.2rem;
