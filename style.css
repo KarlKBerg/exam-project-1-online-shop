@@ -79,7 +79,6 @@ main {
   display: flex;
   gap: 8rem;
 }
-
 /* Product carousel */
 .product-carousel {
   width: 100%;
@@ -148,6 +147,12 @@ section {
   gap: 3.2rem;
 }
 /* Product card */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.6rem;
+  padding: 2rem;
+}
 .product-card {
   background-color: #111827;
   min-width: 28rem;
@@ -156,6 +161,9 @@ section {
 }
 .product-card img {
   border-radius: 0.5rem;
+  width: 28rem;
+  height: 35rem;
+  object-fit: cover;
 }
 .card-description {
   font-weight: 600;
