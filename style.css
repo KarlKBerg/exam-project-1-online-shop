@@ -529,7 +529,99 @@ footer ul a:hover {
   justify-content: center;
   padding: 0.8rem 0;
 }
+/* ==== CHECKOUT PAGE ==== */
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+}
+.information form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 3.2rem 0;
+}
+.delivery-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+}
+.information form input {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0;
+}
+.zip-city {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.delivery-service,
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 3.2rem 0;
+  font-size: 1.6rem;
+}
+.delivery-service i:hover,
+.payment-method i:hover {
+  color: var(--cyan-accent);
+  cursor: pointer;
+}
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.check-name {
+  display: flex;
+  gap: 0.8rem;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4rem;
+  width: 42rem;
+}
+.detail-row {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-row-total {
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.confirm-btn {
+  font-size: 2.4rem;
+  background-color: var(--green-accent);
+  border-radius: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
+.legal-txt {
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+}
 /* ==== HEADINGS ==== */
+.active {
+  color: var(--green-accent);
+}
 .section-heading {
   font-size: 3.2rem;
   font-weight: 600;
@@ -541,4 +633,7 @@ footer ul a:hover {
 }
 .hidden {
   display: none;
+}
+.underline {
+  text-decoration: underline;
 }
