@@ -75,8 +75,101 @@
       <section class="checkout">
         <h1 class="section-heading">Checkout</h1>
         <div class="checkout-container">
-          <div class="information"></div>
-          <div class="details"></div>
+          <div class="information">
+            <h2 class="section-heading">Delivery information</h2>
+            <form action="#">
+              <div class="delivery-input">
+                <label for="name">Name</label>
+                <input type="text" name="name" />
+              </div>
+              <div class="delivery-input">
+                <div class="delivery-heading">
+                  <label for="phone">Phone</label>
+                  <i class="fa-regular fa-circle-question"></i>
+                </div>
+                <input type="number" name="phone" />
+              </div>
+              <div class="delivery-input">
+                <label for="street-address">Street address</label>
+                <input type="text" name="street-address" />
+              </div>
+              <div class="zip-city">
+                <div class="delivery-input">
+                  <div class="delivery-heading">
+                    <label for="zip">Zip</label>
+                    <i class="fa-regular fa-circle-question"></i>
+                  </div>
+                  <input type="number" name="zip" />
+                </div>
+                <div class="delivery-input">
+                  <label for="city">City</label>
+                  <input type="text" name="city" />
+                </div>
+              </div>
+            </form>
+            <h2 class="section-heading">Delivery-service</h2>
+            <div class="delivery-service">
+              <div class="service">
+                <div class="check-name">
+                  <i class="fa-solid fa-circle active"></i>
+                  <p class="service-name">Delivery point</p>
+                </div>
+                <p class="delivery-price">$10</p>
+              </div>
+              <div class="service">
+                <div class="check-name">
+                  <i class="fa-solid fa-circle"></i>
+                  <p class="service-name">Pickup point</p>
+                </div>
+                <p class="delivery-price">$0</p>
+              </div>
+            </div>
+            <h2 class="section-heading">Payment method</h2>
+            <div class="payment-method">
+              <div class="check-name">
+                <i class="fa-solid fa-circle active"></i>
+                <p class="service-name">Vipps</p>
+              </div>
+              <div class="check-name">
+                <i class="fa-solid fa-circle big"></i>
+                <p class="service-name">Card</p>
+              </div>
+              <div class="check-name">
+                <i class="fa-solid fa-circle big"></i>
+                <p class="service-name">Klarna</p>
+              </div>
+            </div>
+          </div>
+          <div class="details">
+            <h2 class="section-heading">Details</h2>
+            <div class="details-container">
+              <div class="detail-row">
+                <p class="detail-text">Subtotal</p>
+                <p class="detail-price">$2079.99</p>
+              </div>
+              <div class="detail-row">
+                <p class="detail-text">Tax</p>
+                <p class="detail-price">$2.79</p>
+              </div>
+              <div class="detail-row">
+                <p class="detail-text">Shipping</p>
+                <p class="detail-price">$10</p>
+              </div>
+              <div class="detail-row">
+                <p class="detail-text">Discount</p>
+                <p class="detail-price">$0</p>
+              </div>
+              <div class="detail-row-total">
+                <p class="detail-text total">Total</p>
+                <p class="detail-price total">$2092.78</p>
+              </div>
+              <a href="../success/index.html" class="confirm-btn">Confirm</a>
+              <a href="../leagal-and-policies/tos.html" class="legal-txt">
+                By purchasing you accept the
+                <span class="underline">terms of service</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
