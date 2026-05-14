@@ -22,8 +22,6 @@ async function fetchProducts() {
     renderCarousel(carouselProducts);
     showSlides(slideIndex);
     initDotListeners();
-    console.log(allProducts);
-    console.log(carouselProducts);
   }
 }
 
@@ -122,7 +120,6 @@ function initDotListeners() {
   dotButtons.forEach((dot) => {
     dot.addEventListener("click", (event) => {
       slideIndex = dotButtons.indexOf(event.target) + 1;
-      console.log(slideIndex);
       showSlides(slideIndex);
     });
   });
