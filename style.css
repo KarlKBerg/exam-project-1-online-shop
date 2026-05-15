@@ -207,7 +207,8 @@ nav .nav-item:hover {
   padding-top: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+
+  gap: 1.6rem;
 }
 .title-fav {
   display: flex;
@@ -218,6 +219,22 @@ nav .nav-item:hover {
 }
 .favourite {
   color: #f30000;
+}
+/* On Sale */
+.on-sale-price {
+  display: flex;
+  justify-content: space-between;
+}
+.original-price {
+  color: red;
+  text-decoration: line-through;
+}
+.sale-tag {
+  padding: 0.4rem 0.8rem;
+  font-size: 1.4rem;
+  background-color: var(--green-accent);
+  width: fit-content;
+  border-radius: 0.5rem;
 }
 /* ==== ANIMATIONS ==== */
 .slide-animation {
