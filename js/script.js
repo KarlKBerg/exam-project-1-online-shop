@@ -21,6 +21,7 @@ async function fetchProducts() {
   } catch (error) {
     console.log(error);
   } finally {
+    console.log(allProducts);
     displayProducts(allProducts.slice(0, productsToShow));
     getCarouselProducts();
     renderCarousel(carouselProducts);
@@ -44,6 +45,12 @@ function displayProducts(products) {
     const descDiv = document.createElement("div");
     descDiv.classList.add("card-description");
 
+    const titleFav = document.createElement("div");
+    titleFav.classList.add("title-fav");
+
+    const favIcon = document.createElement("i");
+    favIcon.classList.add("fa-solid", "fa-heart");
+
     const title = document.createElement("h3");
     title.classList.add("product-title");
     title.textContent = `${product.title}`;
@@ -55,7 +62,9 @@ function displayProducts(products) {
     container.appendChild(div);
     div.appendChild(img);
     div.appendChild(descDiv);
-    descDiv.appendChild(title);
+    descDiv.appendChild(titleFav);
+    titleFav.appendChild(title);
+    titleFav.appendChild(favIcon);
     descDiv.appendChild(price);
   });
   // Show more/less button
