@@ -348,7 +348,7 @@ function onSaleProducts() {
 // Top rated - over 4.5 rated
 function topRatedProducts() {
   allProducts.forEach((p) => {
-    if (p.rating >= 4.6) {
+    if (p.rating >= 4) {
       topRated.push(p);
     }
   });
