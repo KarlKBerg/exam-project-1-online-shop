@@ -9,6 +9,7 @@ body {
 }
 section {
   padding: 0 4rem;
+  margin-top: 8rem;
 }
 /* ==== HEADER ==== */
 header {
@@ -158,7 +159,28 @@ nav .nav-item:hover {
   cursor: pointer;
 }
 /* PRODUCT SLIDERS */
-
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+.section-header .slide-buttons {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 2.4rem;
+}
+.slider-container {
+  overflow: hidden;
+  position: relative;
+}
+.slider-track {
+  display: flex;
+  gap: 3.2rem;
+}
+.slider-track .product-card {
+  min-width: 25rem;
+}
 /* ==== COMPONENTS ==== */
 .hidden {
   display: none;
@@ -166,7 +188,6 @@ nav .nav-item:hover {
 .section-heading {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-top: 8rem;
 }
 /* PRODUCT CARDS */
 .product-card {
@@ -187,6 +208,16 @@ nav .nav-item:hover {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+}
+.title-fav {
+  display: flex;
+  justify-content: space-between;
+}
+.title-fav i {
+  font-size: 2.4rem;
+}
+.favourite {
+  color: #f30000;
 }
 /* ==== ANIMATIONS ==== */
 .slide-animation {
@@ -245,5 +276,8 @@ nav .nav-item:hover {
   }
   .add-to-cart-btn {
     padding: 1.6rem;
+  }
+  .section-header .slide-buttons {
+    gap: 1.2rem;
   }
 }
