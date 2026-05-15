@@ -4,7 +4,11 @@ const API_PATH = "online-shop";
 const API = API_BASE + API_PATH;
 
 let allProducts = [];
+// Carousel
 let carouselProducts = [];
+let slideIndex = 1;
+// Show all products
+let productsToShow = 10;
 
 async function fetchProducts() {
   try {
@@ -17,16 +21,18 @@ async function fetchProducts() {
   } catch (error) {
     console.log(error);
   } finally {
-    displayProducts(allProducts);
+    displayProducts(allProducts.slice(0, productsToShow));
     getCarouselProducts();
     renderCarousel(carouselProducts);
-    showSlides(slideIndex);
+    initCarousel();
     initDotListeners();
   }
 }
 
+// Render products
 function displayProducts(products) {
   const container = document.querySelector(".products-container");
+  const btnContainer = document.querySelector(".all-products");
   container.innerHTML = "";
   products.forEach((product) => {
     const div = document.createElement("div");
@@ -52,9 +58,32 @@ function displayProducts(products) {
     descDiv.appendChild(title);
     descDiv.appendChild(price);
   });
+  // Show more/less button
+  const showMoreBtn = document.querySelector(".show-more-btn");
+  if (showMoreBtn) {
+    showMoreBtn.remove();
+  }
+
+  const showBtn = document.createElement("button");
+  showBtn.classList.add("show-more-btn");
+  if (productsToShow >= allProducts.length) {
+    showBtn.textContent = "Show less";
+  } else {
+    showBtn.textContent = "Show more";
+  }
+
+  showBtn.addEventListener("click", () => {
+    if (productsToShow === allProducts.length) {
+      showLessProducts();
+    } else {
+      showMoreProducts();
+    }
+  });
+  btnContainer.appendChild(showBtn);
 }
 fetchProducts();
 
+/* ==== CAROUSEL ==== */
 function getCarouselProducts() {
   // Randomize products for carousel
   const sortedProducts = [...allProducts];
@@ -62,7 +91,7 @@ function getCarouselProducts() {
   carouselProducts = shuffled.slice(0, 3);
 }
 
-function renderCarousel(products) {
+function renderCarousel() {
   const container = document.querySelector(".product-carousel");
   container.innerHTML = "";
   carouselProducts.forEach((p) => {
@@ -112,7 +141,7 @@ function renderCarousel(products) {
   indicators.appendChild(dot2);
   indicators.appendChild(dot3);
 }
-let slideIndex = 1;
+
 function initDotListeners() {
   const dotButtons = Array.from(
     document.querySelectorAll(".carousel-indicators i"),
@@ -125,12 +154,20 @@ function initDotListeners() {
   });
 }
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
+// Automatic slide
+setInterval(() => {
+  updateIndex();
+}, 8000);
+function updateIndex() {
+  slideIndex++;
+  showSlides(slideIndex);
 }
 
-function currentSlide(n) {
-  showSlides((slideIndex = n));
+function initCarousel() {
+  let slides = document.getElementsByClassName("carousel-product");
+  let dots = document.querySelectorAll(".carousel-indicators i");
+  slides[0].style.display = "block";
+  dots[0].className += " active";
 }
 
 function showSlides(n) {
@@ -146,10 +183,30 @@ function showSlides(n) {
   }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+    slides[i].classList.remove("slide-animation");
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace("active", "");
   }
   slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].classList.add("slide-animation");
   dots[slideIndex - 1].className += " active";
 }
+
+/* ==== SHOW MORE/LESS BUTTON ==== */
+function showMoreProducts() {
+  productsToShow += 10;
+  if (productsToShow > allProducts.length) {
+    productsToShow = allProducts.length;
+  }
+  displayProducts(allProducts.slice(0, productsToShow));
+}
+function showLessProducts() {
+  productsToShow = 10;
+  displayProducts(allProducts.slice(0, productsToShow));
+}
+
+// Scroll to the top of page on refresh
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
