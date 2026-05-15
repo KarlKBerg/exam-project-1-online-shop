@@ -27,6 +27,14 @@ async function fetchProducts() {
     renderCarousel(carouselProducts);
     initCarousel();
     initDotListeners();
+
+    // Slider
+    topRatedProducts();
+    onSaleProducts();
+    renderSlider(topRated, "top-rated");
+    renderSlider(onSale, "on-sale");
+    console.log(onSale, topRated);
+    slideButtons();
   }
 }
 
@@ -215,7 +223,136 @@ function showLessProducts() {
   displayProducts(allProducts.slice(0, productsToShow));
 }
 
-// Scroll to the top of page on refresh
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
+/* ==== PRODUCT SLIDES ==== */
+const sliderPositions = {
+  "on-sale": 0,
+  "top-rated": 0,
+  "dont-miss-out": 0,
+  "similar-products": 0,
 };
+const onSale = [];
+const topRated = [];
+const dontMissOut = [];
+const similarProducts = [];
+const onSaleSlider = document.getElementById("on-sale");
+const topRatedSlider = document.getElementById("top-rated");
+
+function renderSlider(type, id) {
+  const container = document.querySelector(`#${id} .slider-track`);
+  container.innerHTML = "";
+
+  type.forEach((p) => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    const img = document.createElement("img");
+    img.src = p.image.url;
+
+    const cardDesc = document.createElement("div");
+    cardDesc.classList.add("card-description");
+
+    const titleFav = document.createElement("div");
+    titleFav.classList.add("title-fav");
+
+    const title = document.createElement("h3");
+    title.classList.add("product-title");
+    title.textContent = p.title;
+
+    const favIcon = document.createElement("i");
+    favIcon.classList.add("fa-solid", "fa-heart");
+
+    const price = document.createElement("h3");
+    price.classList.add("product-price");
+    price.textContent = p.price;
+
+    const priceDiv = document.createElement("div");
+    priceDiv.classList.add("on-sale-price");
+
+    const discountedPrice = document.createElement("h3");
+    discountedPrice.classList.add("discounted-price");
+    discountedPrice.textContent = p.discountedPrice;
+
+    const originalPrice = document.createElement("h3");
+    originalPrice.classList.add("original-price");
+    originalPrice.textContent = p.price;
+
+    const saleTag = document.createElement("h4");
+    saleTag.classList.add("sale-tag");
+    saleTag.textContent = `Sale`;
+
+    if (p.price > p.discountedPrice) {
+      container.appendChild(card);
+      card.appendChild(img);
+      card.appendChild(cardDesc);
+      cardDesc.appendChild(titleFav);
+      titleFav.appendChild(title);
+      titleFav.appendChild(favIcon);
+      cardDesc.appendChild(saleTag);
+      cardDesc.appendChild(priceDiv);
+      priceDiv.appendChild(discountedPrice);
+      priceDiv.appendChild(originalPrice);
+    } else {
+      container.appendChild(card);
+      card.appendChild(img);
+      card.appendChild(cardDesc);
+      cardDesc.appendChild(titleFav);
+      titleFav.appendChild(title);
+      titleFav.appendChild(favIcon);
+      cardDesc.appendChild(price);
+    }
+  });
+}
+
+// Next/Prev buttons
+function slideButtons() {
+  const buttons = document.querySelectorAll(".slide-buttons i");
+  buttons.forEach((b) => {
+    b.addEventListener("click", (event) => {
+      let div = event.target.closest(".slide-buttons");
+      let btn = div.dataset.slider;
+      let track = document.querySelector(`#${btn} .slider-track`);
+
+      let containerWidth = track.scrollWidth;
+
+      let trackWidth = document.querySelector(
+        `#${btn} .slider-container`,
+      ).offsetWidth;
+
+      if (event.target.classList.contains("fa-square-chevron-right")) {
+        if (sliderPositions[btn] === -(containerWidth - trackWidth)) {
+          sliderPositions[btn] = 0;
+        } else {
+          sliderPositions[btn] -= 282;
+        }
+        if (sliderPositions[btn] < -(containerWidth - trackWidth)) {
+          sliderPositions[btn] = -(containerWidth - trackWidth);
+        }
+      } else if (event.target.classList.contains("fa-square-chevron-left")) {
+        sliderPositions[btn] += 282;
+        if (sliderPositions[btn] > 0) {
+          sliderPositions[btn] = -(containerWidth - trackWidth);
+        }
+      }
+      track.style.transform = `translateX(${sliderPositions[btn]}px)`;
+    });
+  });
+}
+// On sale - All products on sale
+function onSaleProducts() {
+  allProducts.forEach((p) => {
+    if (p.price > p.discountedPrice) {
+      onSale.push(p);
+    }
+  });
+}
+// Top rated - over 4.5 rated
+function topRatedProducts() {
+  allProducts.forEach((p) => {
+    if (p.rating >= 4.6) {
+      topRated.push(p);
+    }
+  });
+}
+// Don't miss out - Same category
+
+// Similar products
