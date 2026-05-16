@@ -350,7 +350,18 @@ footer ul a:hover {
   width: fit-content;
   border-radius: 0.5rem;
 }
-
+/* BREADCRUMBS */
+.breadcrumbs {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  gap: 1.6rem;
+  padding: 0 4rem;
+  margin-top: 4rem;
+}
+.breadcrumbs .breadcrumb-inactive {
+  text-decoration: underline;
+}
 /* ==== ANIMATIONS ==== */
 .slide-animation {
   animation: slide 1s ease-out;
