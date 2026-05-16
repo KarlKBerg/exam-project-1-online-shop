@@ -457,6 +457,175 @@ footer ul a:hover {
 .check i {
   color: red;
 }
+/* ==== CART ==== */
+.cart-container {
+  margin-top: 4rem;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  padding-bottom: 4rem;
+}
+.img-title-amount {
+  display: flex;
+  gap: 4rem;
+}
+.title-amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img-title-amount img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+.delete-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+.delete-price p {
+  text-decoration: underline;
+}
+.total-price {
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+.discount-code {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 4rem;
+}
+.discount-input {
+  display: flex;
+  gap: 2.4rem;
+}
+.discount-code input {
+  background-color: #fff;
+  width: 23rem;
+  padding: 0.4rem;
+}
+.discount-btn {
+  padding: 0 1.6rem;
+  color: #000;
+  background-color: var(--green-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+.checkout-btn {
+  font-size: 2.4rem;
+  background-color: var(--cyan-accent);
+  border-radius: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
+/* ==== CHECKOUT PAGE ==== */
+.checkout-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+}
+.delete-price h2 {
+  font-size: 1.8rem;
+}
+.information form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 3.2rem 0;
+}
+.delivery-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+}
+.information form input {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0;
+}
+.zip-city {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.delivery-service,
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 3.2rem 0;
+  font-size: 1.6rem;
+}
+.delivery-service i:hover,
+.payment-method i:hover {
+  color: var(--cyan-accent);
+  cursor: pointer;
+}
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.check-name {
+  display: flex;
+  gap: 0.8rem;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4rem;
+  width: 42rem;
+}
+.detail-row {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-row-total {
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.confirm-btn {
+  font-size: 2.4rem;
+  background-color: var(--green-accent);
+  border-radius: 0.5rem;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
+.confirm-btn:hover {
+  background-color: var(--green-hover);
+}
+.legal-txt {
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+}
 /* ==== COMPONENTS ==== */
 .hidden {
   display: none;
@@ -613,5 +782,23 @@ footer ul a:hover {
   }
   .newsletter-container p {
     width: auto;
+  }
+  .img-title-amount {
+    gap: 1.6rem;
+  }
+  .img-title-amount h2 {
+    font-size: 1.6rem;
+  }
+  .cart-item {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .delete-price {
+    text-align: left;
+    gap: 1.6rem;
+  }
+  .amount-select {
+    font-size: 1.8rem;
+    gap: 0.8rem;
   }
 }
