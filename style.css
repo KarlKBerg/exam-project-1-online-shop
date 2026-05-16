@@ -532,9 +532,13 @@ footer ul a:hover {
   padding: 0.8rem 0;
 }
 /* ==== CHECKOUT PAGE ==== */
+.checkout h1 {
+  border-bottom: 1px solid white;
+}
 .checkout-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 18rem;
   margin-top: 4rem;
 }
 .information {
@@ -765,6 +769,10 @@ footer ul a:hover {
     border-radius: 0.5rem;
     min-width: 20rem;
   }
+  .checkout-container {
+    flex-direction: column;
+    gap: 4rem;
+  }
 }
 
 @media screen and (max-width: 570px) {
@@ -803,6 +811,7 @@ footer ul a:hover {
   }
   .checkout-container {
     flex-direction: column;
+    gap: 3.2rem;
   }
   .information input {
     width: 100%;
