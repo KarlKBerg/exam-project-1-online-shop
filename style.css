@@ -372,11 +372,95 @@ footer ul a:hover {
 .favourite-products-container p {
   margin-top: 2.4rem;
 }
+/* ==== LOGIN and register PAGE ==== */
+.login,
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login h2,
+.register h2 {
+  text-align: center;
+  margin-top: 4rem;
+}
+.login form,
+.register form {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.email,
+.psw,
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.email input,
+.psw input,
+.name input {
+  background-color: white;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  min-width: 50rem;
+}
+.login form label,
+.register form label {
+  font-weight: 600;
+}
+.checkbox {
+  display: flex;
+  gap: 0.8rem;
+}
+.login a,
+.register a {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.2rem;
+}
+.login #register-text,
+.register #register-text {
+  text-decoration: underline;
+  margin-left: 0.4rem;
+}
+.login-btn,
+.register-btn {
+  font-weight: 600;
+  padding: 0.4rem;
+  width: 16rem;
+  background-color: var(--green-accent);
+  border-radius: 0.5rem;
+  color: black;
+  margin: 0 auto;
+}
+.login-btn:hover {
+  background-color: var(--green-hover);
+}
+.register-btn {
+  background-color: var(--cyan-accent);
+}
+.register-btn:hover {
+  background-color: var(--cyan-hover);
+}
+.field-check {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.check {
+  display: flex;
+  gap: 0.8rem;
+}
+.check i {
+  color: red;
+}
 /* ==== COMPONENTS ==== */
 .hidden {
   display: none;
 }
-
 .section-heading {
   font-size: 2.4rem;
   font-weight: 700;
@@ -503,6 +587,14 @@ footer ul a:hover {
     left: 50%;
     transform: translateX(-50%);
     bottom: 16rem;
+  }
+  .email input,
+  .psw input,
+  .name input {
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    min-width: 20rem;
   }
 }
 
