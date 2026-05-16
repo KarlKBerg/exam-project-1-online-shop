@@ -554,12 +554,12 @@ footer ul a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .information form input {
   background-color: #fff;
   border-radius: 0.5rem;
-  padding: 0.4rem 0;
+  padding: 0.4rem 0.4rem;
 }
 .zip-city {
   display: flex;
@@ -572,7 +572,7 @@ footer ul a:hover {
   flex-direction: column;
   gap: 1.6rem;
   margin: 3.2rem 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .delivery-service i:hover,
 .payment-method i:hover {
@@ -591,7 +591,7 @@ footer ul a:hover {
 .details {
   display: flex;
   flex-direction: column;
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   width: 42rem;
 }
 .detail-row {
@@ -606,7 +606,7 @@ footer ul a:hover {
   justify-content: space-between;
 }
 .total {
-  font-size: 3.2rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 .confirm-btn {
@@ -623,7 +623,7 @@ footer ul a:hover {
   background-color: var(--green-hover);
 }
 .legal-txt {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-top: 0.4rem;
 }
 /* ==== COMPONENTS ==== */
@@ -800,5 +800,14 @@ footer ul a:hover {
   .amount-select {
     font-size: 1.8rem;
     gap: 0.8rem;
+  }
+  .checkout-container {
+    flex-direction: column;
+  }
+  .information input {
+    width: 100%;
+  }
+  .details {
+    width: 100%;
   }
 }
