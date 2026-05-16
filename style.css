@@ -262,7 +262,6 @@ footer {
 }
 .footer-newsletter a {
   background-color: var(--cyan-accent);
-  font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
   color: black;
@@ -308,7 +307,6 @@ footer ul a:hover {
   gap: 3.2rem;
 }
 .product-description {
-  font-size: 1.4rem;
   width: 48rem;
 }
 .amount-select {
@@ -366,7 +364,14 @@ footer ul a:hover {
   font-size: 1.8rem;
   font-weight: 600;
 }
-
+/* ==== FAVOURITES PAGE ==== */
+.favourites .section-heading {
+  margin-top: 8rem;
+  border-bottom: 1px solid white;
+}
+.favourite-products-container p {
+  margin-top: 2.4rem;
+}
 /* ==== COMPONENTS ==== */
 .hidden {
   display: none;
@@ -425,7 +430,6 @@ footer ul a:hover {
 }
 /* BREADCRUMBS */
 .breadcrumbs {
-  font-size: 1.4rem;
   font-weight: 600;
   display: flex;
   gap: 1.6rem;
