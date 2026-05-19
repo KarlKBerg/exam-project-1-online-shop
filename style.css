@@ -765,6 +765,34 @@ footer ul a:hover {
   width: fit-content;
   border-radius: 0.5rem;
 }
+/* LOADING ANIMATION */
+.loading-container {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading-container p {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+.loading {
+  border: 0.8rem solid #f3f3f3;
+  border-top: 0.8rem solid #797979;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* BREADCRUMBS */
 .breadcrumbs {
   font-weight: 600;
