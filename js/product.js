@@ -20,6 +20,8 @@ async function fetchProduct(id) {
     const result = await response.json();
     stopLoadingSpinner();
     displayProduct(result.data);
+    document.querySelector(".breadcrumb-inactive").textContent =
+      result.data.title;
   } catch (error) {
     console.log(error);
   }
@@ -81,6 +83,10 @@ function displayProduct(data) {
   discountedPrice.classList.add("discounted-price");
   discountedPrice.textContent = data.discountedPrice;
 
+  const addToCartBtn = document.createElement("a");
+  addToCartBtn.classList.add("add-to-cart-btn");
+  addToCartBtn.textContent = "Add to cart";
+  // Product
   productContainer.appendChild(img);
   productContainer.appendChild(infoDiv);
   infoDiv.appendChild(title);
@@ -109,6 +115,39 @@ function displayProduct(data) {
     priceDiv.appendChild(noSalePrice);
   }
   infoDiv.appendChild(addToCartBtn);
+  // Review
+  document.querySelector(".reviews h2").textContent =
+    `Reviews (${data.reviews.length})`;
+  console.log(data.reviews);
+  data.reviews.forEach((review) => {
+    const reviewDiv = document.createElement("div");
+    reviewDiv.classList.add("review");
+
+    const reviewHeading = document.createElement("div");
+    reviewHeading.classList.add("review-heading");
+
+    const name = document.createElement("h3");
+    name.classList.add("name");
+    name.textContent = review.username;
+
+    const reviewRating = document.createElement("div");
+    reviewRating.classList.add("rating");
+
+    const reviewText = document.createElement("p");
+    reviewText.classList.add("review-text");
+    reviewText.textContent = review.description;
+
+    reviewsContainer.appendChild(reviewDiv);
+    reviewDiv.appendChild(reviewHeading);
+    reviewHeading.appendChild(name);
+    reviewHeading.appendChild(reviewRating);
+    for (let r = 0; r < review.rating; r++) {
+      const reviewStar = document.createElement("i");
+      reviewStar.classList.add("fa-solid", "fa-star");
+      reviewRating.appendChild(reviewStar);
+    }
+    reviewDiv.appendChild(reviewText);
+  });
 }
 // Add product to cart
 /*
