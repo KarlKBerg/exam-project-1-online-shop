@@ -44,7 +44,7 @@ export function cartMessage(id, text, type) {
     messageContainer.classList.add("error");
   }
   const message = document.createElement("h3");
-  message.textContent = text;
+  message.textContent = `${id} ${text}`;
   messageContainer.appendChild(message);
   setTimeout(() => {
     messageContainer.classList.add("hidden");
