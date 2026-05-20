@@ -14,6 +14,43 @@ export function stopLoadingSpinner() {
   mainContainer.classList.remove("hidden");
 }
 
+// Success/Error message
+function displayMessage(text, type) {
+  const messageContainer = document.querySelector("main .message-container");
+  messageContainer.innerHTML = "";
+  messageContainer.classList.remove("hidden");
+  if (type === "success") {
+    messageContainer.classList.add("success");
+  } else {
+    messageContainer.classList.add("error");
+  }
+  const message = document.createElement("h3");
+  message.textContent = text;
+  messageContainer.appendChild(message);
+  setTimeout(() => {
+    messageContainer.classList.add("hidden");
+  }, 4000);
+}
+
+// Added/Removed from cart message
+function cartMessage(id, text, type) {
+  const messageContainer = document.querySelector("main .message-container");
+  messageContainer.innerHTML = "";
+  messageContainer.classList.remove("hidden");
+
+  if (type === "added") {
+    messageContainer.classList.add("success");
+  } else {
+    messageContainer.classList.add("error");
+  }
+  const message = document.createElement("h3");
+  message.textContent = text;
+  messageContainer.appendChild(message);
+  setTimeout(() => {
+    messageContainer.classList.add("hidden");
+  }, 4000);
+}
+
 /* ==== PRODUCT SLIDES ==== */
 export const sliderPositions = {
   "on-sale": 0,
