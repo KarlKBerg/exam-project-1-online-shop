@@ -1,0 +1,133 @@
+`use strict`;
+import { cartMessage } from "./utils.js";
+
+export let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+export function calculateCart() {
+  let subtotal = 0;
+  cart.forEach((product) => {
+    let priceToUse = 0;
+    if (product.price > product.discountedPrice) {
+      priceToUse = product.discountedPrice;
+    } else {
+      priceToUse = product.price;
+    }
+    subtotal += Number(priceToUse);
+  });
+  subtotal = Number(subtotal.toFixed(2));
+  let tax = subtotal * 0.25;
+  tax = parseFloat(tax.toFixed(2));
+  const total = subtotal + tax;
+  const formattedTotal = parseFloat(total.toFixed(2));
+  displayCartPrices(subtotal, tax, formattedTotal);
+}
+
+export function displayCartPrices(sub, tax, total) {
+  const subtotalPrice = document.querySelector("#subtotal");
+  const taxPrice = document.querySelector("#tax");
+  const totalPrice = document.querySelector("#total");
+  if (!subtotalPrice || !taxPrice || !totalPrice) return;
+  subtotalPrice.textContent = `$${sub.toFixed(2)}`;
+  taxPrice.textContent = `$${tax.toFixed(2)}`;
+  totalPrice.textContent = `$${total}`;
+}
+
+export function addToCart(product) {
+  cart.push(product);
+  cartMessage(`${product.title}`, `added to cart`, "success");
+  displayCartItems();
+  calculateCart();
+  saveCart();
+}
+
+export function displayCartItems() {
+  const container = document.querySelector(".cart-container");
+  if (!container) return;
+  container.innerHTML = "";
+  cart.forEach((item) => {
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+    cartItem.dataset.id = item.id;
+
+    const imgTitleDiv = document.createElement("div");
+    imgTitleDiv.classList.add("img-title-amount");
+
+    const img = document.createElement("img");
+    img.src = item.image.url;
+
+    const titleAmountDiv = document.createElement("div");
+    titleAmountDiv.classList.add("title-amount");
+
+    const title = document.createElement("h2");
+    title.classList.add("section-heading");
+    title.textContent = item.title;
+
+    const amountSelectDiv = document.createElement("div");
+    amountSelectDiv.classList.add("amount-select");
+
+    const minus = document.createElement("i");
+    minus.classList.add("fa-regular", "fa-circle-minus");
+
+    const amount = document.createElement("p");
+    amount.textContent = 1;
+
+    const plus = document.createElement("i");
+    plus.classList.add("fa-regular", "fa-circle-plus");
+
+    const deletePriceDiv = document.createElement("div");
+    deletePriceDiv.classList.add("delete-price");
+
+    const deleteItem = document.createElement("p");
+    deleteItem.textContent = "Delete";
+    deleteItem.classList.add("delete-btn");
+
+    const price = document.createElement("h2");
+    price.textContent = `$${item.price}`;
+
+    container.appendChild(cartItem);
+    cartItem.appendChild(imgTitleDiv);
+    imgTitleDiv.appendChild(img);
+    imgTitleDiv.appendChild(titleAmountDiv);
+    titleAmountDiv.appendChild(title);
+    titleAmountDiv.appendChild(amountSelectDiv);
+    amountSelectDiv.appendChild(minus);
+    amountSelectDiv.appendChild(amount);
+    amountSelectDiv.appendChild(plus);
+    cartItem.appendChild(deletePriceDiv);
+    deletePriceDiv.appendChild(deleteItem);
+    deletePriceDiv.appendChild(price);
+  });
+}
+export function deleteCartItem(event) {
+  if (!event.target.classList.contains("delete-btn")) return;
+  const product = event.target.closest(".cart-item");
+  const productId = product.dataset.id;
+  cart = cart.filter((item) => item.id !== productId);
+  isCartEmpty();
+  saveCart();
+  displayCartItems();
+  calculateCart();
+}
+
+// Check if cart is empty and display empty text
+export function isCartEmpty() {
+  const cartContainer = document.querySelector(".cart-container");
+  if (cart.length === 0) {
+    const emptyMessage = document.createElement("h2");
+    emptyMessage.textContent = "No items in cart";
+
+    cartContainer.appendChild(emptyMessage);
+  }
+}
+// Save cart array to localStorage
+export function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+displayCartItems();
+calculateCart();
+
+const deleteBtn = document.querySelector(".cart-container");
+if (deleteBtn) {
+  deleteBtn.addEventListener("click", deleteCartItem);
+}
