@@ -23,6 +23,7 @@
     <!-- ==== LINKS ==== -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../js/cart.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Cart</title>
   </head>
@@ -65,42 +66,27 @@
     </header>
     <!-- ==== END HEADER ==== -->
     <!-- ==== MAIN ==== -->
+    <main class="loading-main hidden">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <p>Loading</p>
+      </div>
+    </main>
     <main>
       <div class="message-container hidden"></div>
       <div class="breadcrumbs">
         <a href="../index.html" class="breadcrumb-active">Home</a>
         <p>></p>
-        <!-- Dynamically rendered via js -->
         <p class="breadcrumb-inactive">Cart</p>
       </div>
       <section class="cart">
         <h1 class="section-heading">Cart</h1>
         <div class="cart-container">
-          <div class="cart-item">
-            <div class="img-title-amount">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle."
-              />
-              <div class="title-amount">
-                <h2 class="section-heading">Vanilla perfume</h2>
-                <div class="amount-select">
-                  <i class="fa-regular fa-circle-minus"></i>
-                  <p>1</p>
-                  <i class="fa-regular fa-circle-plus"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="delete-price">
-              <p>Delete</p>
-              <h2>$ 2079.99</h2>
-            </div>
-          </div>
+          <!-- Dynamicly loaded through js-->
         </div>
         <div class="total-price">
           <h2 class="total section-heading">Total</h2>
-          <h2 class="price section-heading">$ 2079.99</h2>
+          <h2 class="price section-heading">$</h2>
         </div>
         <div class="discount-code">
           <div class="discount-title">
@@ -114,77 +100,6 @@
         <a href="../checkout/index.html" class="checkout-btn"
           >Proceed to checkout</a
         >
-      </section>
-      <!-- Dont miss out -->
-      <section class="slider">
-        <div class="section-header">
-          <h2 class="section-heading" id="dont-miss-out-products">
-            Don't miss out
-          </h2>
-          <div class="slide-buttons">
-            <i class="fa-regular fa-square-chevron-left"></i>
-            <i class="fa-regular fa-square-chevron-right"></i>
-          </div>
-        </div>
-        <div class="slider-container">
-          <div class="slider-track">
-            <!-- Cards (Dynamically rendered) -->
-            <div class="product-card">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle"
-              />
-              <div class="card-description">
-                <h3 class="product-title">Vanilla perfume</h3>
-                <h3 class="product-price">$ 2079.99</h3>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle"
-              />
-              <div class="card-description">
-                <h3 class="product-title">Vanilla perfume</h3>
-                <h3 class="product-price">$ 2079.99</h3>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle"
-              />
-              <div class="card-description">
-                <h3 class="product-title">Vanilla perfume</h3>
-                <h3 class="product-price">$ 2079.99</h3>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle"
-              />
-              <div class="card-description">
-                <h3 class="product-title">Vanilla perfume</h3>
-                <h3 class="product-price">$ 2079.99</h3>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <img
-                src="../img/1-perfume-white.jpg"
-                alt="Vanilla perfume bottle"
-              />
-              <div class="card-description">
-                <h3 class="product-title">Vanilla perfume</h3>
-                <h3 class="product-price">$ 2079.99</h3>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </main>
     <!-- ==== END MAIN ==== -->
