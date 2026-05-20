@@ -344,6 +344,9 @@ footer ul a:hover {
   font-size: 1.6rem;
   color: yellow;
 }
+.rating p {
+  color: var(--primary-text-color);
+}
 /* Reviews */
 .reviews-container {
   display: flex;
