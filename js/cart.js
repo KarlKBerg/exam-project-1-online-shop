@@ -34,7 +34,7 @@ export function displayCartPrices(sub, tax, total) {
 
 export function addToCart(product) {
   cart.push(product);
-  cartMessage(`${product.title}`, `added to cart`, "success");
+  cartMessage(`${product.title}`, `was added to the cart`, "added");
   displayCartItems();
   calculateCart();
   saveCart();
@@ -81,8 +81,19 @@ export function displayCartItems() {
     deleteItem.textContent = "Delete";
     deleteItem.classList.add("delete-btn");
 
+    const priceDiv = document.createElement("div");
+    priceDiv.classList.add("price-container");
+
     const price = document.createElement("h2");
+    price.classList.add("original-price");
     price.textContent = `$${item.price}`;
+
+    const noSalePrice = document.createElement("h2");
+    noSalePrice.textContent = item.price;
+
+    const discountedPrice = document.createElement("h2");
+    discountedPrice.classList.add("discounted-price");
+    discountedPrice.textContent = item.discountedPrice;
 
     container.appendChild(cartItem);
     cartItem.appendChild(imgTitleDiv);
@@ -95,18 +106,39 @@ export function displayCartItems() {
     amountSelectDiv.appendChild(plus);
     cartItem.appendChild(deletePriceDiv);
     deletePriceDiv.appendChild(deleteItem);
-    deletePriceDiv.appendChild(price);
+    deletePriceDiv.appendChild(priceDiv);
+    if (item.price > item.discountedPrice) {
+      priceDiv.appendChild(discountedPrice);
+      priceDiv.appendChild(price);
+    } else {
+      priceDiv.appendChild(noSalePrice);
+    }
   });
+  const totalPrice = document.querySelector(".total-price .price");
+  let subPrice = 0;
+  cart.forEach((p) => {
+    if (p.price > p.discountedPrice) {
+      subPrice += p.discountedPrice;
+    } else {
+      subPrice += p.price;
+    }
+  });
+  if (totalPrice) {
+    totalPrice.textContent = `$${subPrice.toFixed(2)}`;
+  }
 }
 export function deleteCartItem(event) {
   if (!event.target.classList.contains("delete-btn")) return;
   const product = event.target.closest(".cart-item");
   const productId = product.dataset.id;
+  const productName = cart.find((item) => item.id === productId);
   cart = cart.filter((item) => item.id !== productId);
+
   isCartEmpty();
   saveCart();
   displayCartItems();
   calculateCart();
+  cartMessage(productName.title, " Removed from cart", "removed");
 }
 
 // Check if cart is empty and display empty text
