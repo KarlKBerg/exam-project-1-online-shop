@@ -15,7 +15,11 @@ const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
 const API = API_BASE + API_PATH;
 
+const PARAMS = new URLSearchParams(window.location.search);
+const ID = PARAMS.get("id");
+
 let allProducts = [];
+let favourites = [];
 // Carousel
 let carouselProducts = [];
 let slideIndex = 1;
@@ -149,7 +153,7 @@ function renderCarousel() {
 
     const cartBtn = document.createElement("a");
     cartBtn.classList.add("add-to-cart-btn");
-    cartBtn.href = "../product/index.html";
+    cartBtn.setAttribute(`href`, `../product/index.html?id=${p.id}`);
     cartBtn.textContent = "View product";
 
     container.appendChild(div);
