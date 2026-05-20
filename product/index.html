@@ -23,7 +23,7 @@
     <!-- ==== LINKS ==== -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
-    <script type="module" src="js/product.js"></script>
+    <script type="module" src="../js/product.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Product info</title>
   </head>
@@ -69,7 +69,13 @@
     </header>
     <!-- ==== END HEADER ==== -->
     <!-- ==== MAIN ==== -->
-    <main>
+    <main class="loading-main hidden">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <p>Loading</p>
+      </div>
+    </main>
+    <main class="main">
       <div class="breadcrumbs">
         <a href="../index.html" class="breadcrumb-active">Home</a>
         <p>></p>
