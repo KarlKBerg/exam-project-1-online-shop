@@ -1,5 +1,10 @@
 "use strict";
-import { loadingSpinner, stopLoadingSpinner } from "./utils.js";
+import {
+  loadingSpinner,
+  stopLoadingSpinner,
+  displayMessage,
+  cartMessage,
+} from "./utils.js";
 
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
@@ -23,11 +28,11 @@ async function fetchProduct(id) {
     document.querySelector(".breadcrumb-inactive").textContent =
       result.data.title;
   } catch (error) {
-    console.log(error);
+    displayMessage(error, "error");
   }
 }
 if (!ID) {
-  console.log("No id found");
+  displayMessage("No id found", "error");
 } else {
   loadingSpinner();
   fetchProduct(ID);
@@ -118,7 +123,6 @@ function displayProduct(data) {
   // Review
   document.querySelector(".reviews h2").textContent =
     `Reviews (${data.reviews.length})`;
-  console.log(data.reviews);
   data.reviews.forEach((review) => {
     const reviewDiv = document.createElement("div");
     reviewDiv.classList.add("review");
