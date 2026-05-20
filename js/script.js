@@ -10,6 +10,8 @@ import {
   topRated,
   dontMissOut,
   similarProducts,
+  displayMessage,
+  cartMessage,
 } from "./utils.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
@@ -35,14 +37,13 @@ async function fetchProducts() {
     const result = await response.json();
     allProducts = result.data;
   } catch (error) {
-    console.log(error);
+    displayMessage(error, "error");
   } finally {
     displayProducts(allProducts.slice(0, productsToShow));
     getCarouselProducts();
     renderCarousel(carouselProducts);
     initCarousel();
     initDotListeners();
-    console.log(allProducts);
 
     // Slider
     topRatedProducts(allProducts);
