@@ -5,15 +5,18 @@ import {
   displayMessage,
   cartMessage,
 } from "./utils.js";
-
+import {
+  addToCart,
+  displayCartItems,
+  calculateCart,
+  saveCart,
+} from "./cart.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
 const API = API_BASE + API_PATH;
 
 const PARAMS = new URLSearchParams(window.location.search);
 const ID = PARAMS.get("id");
-
-let cart = [];
 
 // Fetch product from id
 async function fetchProduct(id) {
@@ -91,6 +94,9 @@ function displayProduct(data) {
   const addToCartBtn = document.createElement("a");
   addToCartBtn.classList.add("add-to-cart-btn");
   addToCartBtn.textContent = "Add to cart";
+  addToCartBtn.addEventListener("click", () => {
+    addToCart(data);
+  });
   // Product
   productContainer.appendChild(img);
   productContainer.appendChild(infoDiv);
