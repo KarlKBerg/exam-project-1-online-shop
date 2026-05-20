@@ -474,7 +474,7 @@ footer ul a:hover {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
-  padding-bottom: 4rem;
+  padding: 4rem 0;
 }
 .img-title-amount {
   display: flex;
