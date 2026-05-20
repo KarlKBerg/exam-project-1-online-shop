@@ -15,7 +15,7 @@ export function stopLoadingSpinner() {
 }
 
 // Success/Error message
-function displayMessage(text, type) {
+export function displayMessage(text, type) {
   const messageContainer = document.querySelector("main .message-container");
   messageContainer.innerHTML = "";
   messageContainer.classList.remove("hidden");
@@ -33,7 +33,7 @@ function displayMessage(text, type) {
 }
 
 // Added/Removed from cart message
-function cartMessage(id, text, type) {
+export function cartMessage(id, text, type) {
   const messageContainer = document.querySelector("main .message-container");
   messageContainer.innerHTML = "";
   messageContainer.classList.remove("hidden");
