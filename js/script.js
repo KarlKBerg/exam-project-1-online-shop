@@ -86,7 +86,7 @@ function displayProducts(products) {
     price.textContent = `$${product.price}`;
 
     const productTag = document.createElement("a");
-    productTag.setAttribute(`href`, `../product/index.html?id=${product.id}`);
+    productTag.setAttribute(`href`, `product/index.html?id=${product.id}`);
     productTag.classList.add("product-card");
 
     container.appendChild(productTag);
@@ -155,7 +155,7 @@ function renderCarousel() {
 
     const cartBtn = document.createElement("a");
     cartBtn.classList.add("add-to-cart-btn");
-    cartBtn.setAttribute(`href`, `../product/index.html?id=${p.id}`);
+    cartBtn.setAttribute(`href`, `product/index.html?id=${p.id}`);
     cartBtn.textContent = "View product";
 
     container.appendChild(div);
