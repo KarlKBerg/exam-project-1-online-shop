@@ -12,6 +12,7 @@ import {
   similarProducts,
   displayMessage,
   cartMessage,
+  openCloseMenu,
 } from "./utils.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
