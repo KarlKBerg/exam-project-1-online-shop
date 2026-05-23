@@ -8,9 +8,9 @@ export function calculateCart() {
   cart.forEach((product) => {
     let priceToUse = 0;
     if (product.price > product.discountedPrice) {
-      priceToUse = product.discountedPrice;
+      priceToUse = product.discountedPrice * product.quantity;
     } else {
-      priceToUse = product.price;
+      priceToUse = product.price * product.quantity;
     }
     subtotal += Number(priceToUse);
   });
@@ -35,7 +35,13 @@ export function displayCartPrices(sub, tax, total) {
 }
 
 export function addToCart(product) {
-  cart.push(product);
+  const existingItem = cart.find((item) => item.id === product.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
   cartMessage(`${product.title}`, `was added to the cart`, "added");
   displayCartItems();
   calculateCart();
@@ -71,7 +77,7 @@ export function displayCartItems() {
     minus.classList.add("fa-regular", "fa-circle-minus");
 
     const amount = document.createElement("p");
-    amount.textContent = 1;
+    amount.textContent = item.quantity;
 
     const plus = document.createElement("i");
     plus.classList.add("fa-regular", "fa-circle-plus");
@@ -190,7 +196,7 @@ function renderOrderSummary(sub, tax, total) {
       const title = document.createElement("h2");
       title.innerHTML = p.title;
       const qty = document.createElement("p");
-      qty.textContent = "QTY: 1";
+      qty.textContent = `QTY: ${p.quantity}`;
       const price = document.createElement("p");
       if (p.price > p.discountedPrice) {
         price.textContent = p.discountedPrice;
