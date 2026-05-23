@@ -1,5 +1,5 @@
 `use strict`;
-import { cartMessage } from "./utils.js";
+import { cartMessage, openCloseMenu } from "./utils.js";
 
 export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
