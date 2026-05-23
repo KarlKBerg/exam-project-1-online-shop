@@ -51,6 +51,7 @@ async function fetchProducts() {
     renderSlider(topRated, "top-rated");
     renderSlider(onSale, "on-sale");
     slideButtons();
+    console.log(allProducts);
   }
 }
 
