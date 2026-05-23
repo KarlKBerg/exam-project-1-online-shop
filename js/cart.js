@@ -126,9 +126,9 @@ export function displayCartItems() {
   let subPrice = 0;
   cart.forEach((p) => {
     if (p.price > p.discountedPrice) {
-      subPrice += p.discountedPrice;
+      subPrice += p.discountedPrice * p.quantity;
     } else {
-      subPrice += p.price;
+      subPrice += p.price * p.quantity;
     }
   });
   if (totalPrice) {
