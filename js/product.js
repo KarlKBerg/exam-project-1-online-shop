@@ -165,3 +165,4 @@ function displayProduct(data) {
 const addToCartBtn = document.querySelector("#add-to-cart");
 addToCartBtn.addEventListener("click", () => {});
 */
+openCloseMenu();
