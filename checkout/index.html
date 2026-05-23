@@ -23,6 +23,7 @@
     <!-- ==== LINKS ==== -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../js/cart.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Checkout</title>
   </head>
@@ -146,11 +147,11 @@
             <div class="details-container">
               <div class="detail-row">
                 <p class="detail-text">Subtotal</p>
-                <p class="detail-price">$2079.99</p>
+                <p class="detail-price" id="subtotal-price">$2079.99</p>
               </div>
               <div class="detail-row">
                 <p class="detail-text">Tax</p>
-                <p class="detail-price">$2.79</p>
+                <p class="detail-price" id="tax-price">$2.79</p>
               </div>
               <div class="detail-row">
                 <p class="detail-text">Shipping</p>
@@ -162,7 +163,7 @@
               </div>
               <div class="detail-row-total">
                 <p class="detail-text total">Total</p>
-                <p class="detail-price total">$2092.78</p>
+                <p class="detail-price total" id="total-price">$2092.78</p>
               </div>
               <a href="../success/index.html" class="confirm-btn">Confirm</a>
               <a href="../leagal-and-policies/tos.html" class="legal-txt">
