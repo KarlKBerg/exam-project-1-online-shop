@@ -233,3 +233,4 @@ const deleteBtn = document.querySelector(".cart-container");
 if (deleteBtn) {
   deleteBtn.addEventListener("click", deleteCartItem);
 }
+openCloseMenu();
