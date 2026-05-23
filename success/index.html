@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
     <script type="module" src="../js/cart.js"></script>
+    <script type="module" src="../js/search.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Order confirmation</title>
   </head>
@@ -34,8 +35,11 @@
       >
       <!-- Search -->
       <div class="search-container">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="search" class="search-input" />
+        <div class="search-i">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" class="search-input" />
+        </div>
+        <div class="search-result hidden"></div>
       </div>
       <!-- Nav -->
       <nav class="main-nav">
