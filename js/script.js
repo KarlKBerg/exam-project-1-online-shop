@@ -248,3 +248,4 @@ function showLessProducts() {
 }
 
 loadingSpinner();
+openCloseMenu();
