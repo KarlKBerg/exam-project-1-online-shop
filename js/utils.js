@@ -187,3 +187,11 @@ export function topRatedProducts(allProducts) {
     }
   });
 }
+
+export function openCloseMenu() {
+  const menu = document.querySelector(".mobile-icons a");
+  menu.addEventListener("click", () => {
+    const button = document.querySelector(".mobile-menu-container");
+    button.classList.toggle("hidden");
+  });
+}
