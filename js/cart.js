@@ -20,6 +20,7 @@ export function calculateCart() {
   const total = subtotal + tax;
   const formattedTotal = parseFloat(total.toFixed(2));
   displayCartPrices(subtotal, tax, formattedTotal);
+  renderDetails(subtotal, tax, formattedTotal);
 }
 
 export function displayCartPrices(sub, tax, total) {
@@ -154,6 +155,18 @@ export function isCartEmpty() {
 // Save cart array to localStorage
 export function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function renderDetails(sub, tax, total) {
+  const subtotalDetail = document.getElementById("subtotal-price");
+  const taxDetail = document.getElementById("tax-price");
+  const totalDetail = document.getElementById("total-price");
+
+  if (subtotalDetail || taxDetail || totalDetail) {
+    subtotalDetail.textContent = `$${sub}`;
+    taxDetail.textContent = `$${tax}`;
+    totalDetail.textContent = `$${total}`;
+  }
 }
 
 displayCartItems();
