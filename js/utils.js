@@ -187,6 +187,3 @@ export function topRatedProducts(allProducts) {
     }
   });
 }
-// Don't miss out - Same category
-
-// Similar products
