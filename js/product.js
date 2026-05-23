@@ -4,6 +4,7 @@ import {
   stopLoadingSpinner,
   displayMessage,
   cartMessage,
+  openCloseMenu,
 } from "./utils.js";
 import {
   addToCart,
