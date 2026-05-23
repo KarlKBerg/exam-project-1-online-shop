@@ -21,6 +21,7 @@ export function calculateCart() {
   const formattedTotal = parseFloat(total.toFixed(2));
   displayCartPrices(subtotal, tax, formattedTotal);
   renderDetails(subtotal, tax, formattedTotal);
+  renderOrderSummary(subtotal, tax, formattedTotal);
 }
 
 export function displayCartPrices(sub, tax, total) {
@@ -162,15 +163,71 @@ function renderDetails(sub, tax, total) {
   const taxDetail = document.getElementById("tax-price");
   const totalDetail = document.getElementById("total-price");
 
-  if (subtotalDetail || taxDetail || totalDetail) {
+  if (subtotalDetail && taxDetail && totalDetail) {
     subtotalDetail.textContent = `$${sub}`;
     taxDetail.textContent = `$${tax}`;
     totalDetail.textContent = `$${total}`;
   }
 }
 
+function renderOrderSummary(sub, tax, total) {
+  const subtotalDetail = document.getElementById("order-sub-price");
+  const taxDetail = document.getElementById("order-tax-price");
+  const totalDetail = document.getElementById("order-total-price");
+  const container = document.querySelector(".product-summary");
+  if (container) {
+    container.innerHTML = "";
+    cart.forEach((p) => {
+      const div = document.createElement("div");
+      div.classList.add("name-qty");
+
+      const img = document.createElement("img");
+      img.src = p.image.url;
+
+      const columnDiv = document.createElement("div");
+      columnDiv.classList.add("column");
+
+      const title = document.createElement("h2");
+      title.innerHTML = p.title;
+      const qty = document.createElement("p");
+      qty.textContent = "QTY: 1";
+      const price = document.createElement("p");
+      if (p.price > p.discountedPrice) {
+        price.textContent = p.discountedPrice;
+      } else {
+        price.textContent = p.price;
+      }
+
+      container.appendChild(div);
+      div.appendChild(img);
+      div.appendChild(columnDiv);
+      columnDiv.appendChild(title);
+      columnDiv.appendChild(qty);
+      container.appendChild(price);
+    });
+
+    if (subtotalDetail && taxDetail && totalDetail) {
+      subtotalDetail.textContent = `$${sub}`;
+      taxDetail.textContent = `$${tax}`;
+      totalDetail.textContent = `$${total}`;
+    }
+  }
+}
+
+function clearCart() {
+  cart.length = 0;
+  saveCart();
+}
+
 displayCartItems();
 calculateCart();
+document.addEventListener("click", (event) => {
+  if (document.getElementById("success-page")) {
+    if (event.target.tagName === "A") {
+      clearCart();
+    }
+  }
+});
 
 const deleteBtn = document.querySelector(".cart-container");
 if (deleteBtn) {
