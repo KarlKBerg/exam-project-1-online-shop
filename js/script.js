@@ -52,7 +52,6 @@ async function fetchProducts() {
     renderSlider(topRated, "top-rated");
     renderSlider(onSale, "on-sale");
     slideButtons();
-    console.log(allProducts);
   }
 }
 
@@ -87,7 +86,7 @@ function displayProducts(products) {
     price.textContent = `$${product.price}`;
 
     const productTag = document.createElement("a");
-    productTag.setAttribute(`href`, `product/index.html?id=${product.id}`);
+    productTag.setAttribute(`href`, `../product/index.html?id=${product.id}`);
     productTag.classList.add("product-card");
 
     container.appendChild(productTag);
