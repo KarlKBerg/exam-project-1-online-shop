@@ -4,6 +4,7 @@ import {
   stopLoadingSpinner,
   similarProducts,
   displayMessage,
+  openCloseMenu,
 } from "./utils.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
@@ -90,3 +91,4 @@ function displaySearch(products) {
   }
 }
 fetchProducts();
+openCloseMenu();
