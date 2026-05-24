@@ -149,6 +149,40 @@ export function deleteCartItem(event) {
   cartMessage(productName.title, " Removed from cart", "removed");
 }
 
+export function addRemoveAmount(event) {
+  if (
+    !event.target.classList.contains("fa-circle-plus") &&
+    !event.target.classList.contains("fa-circle-minus")
+  )
+    return;
+
+  const product = event.target.closest(".cart-item");
+  const productId = product.dataset.id;
+  const productName = cart.find((item) => item.id === productId);
+
+  if (event.target.classList.contains("fa-circle-plus")) {
+    productName.quantity++;
+    displayCartItems();
+    calculateCart();
+    saveCart();
+  } else if (event.target.classList.contains("fa-circle-minus")) {
+    if (productName.quantity <= 1) {
+      cart = cart.filter((item) => item.id !== productId);
+      isCartEmpty();
+      displayCartItems();
+      calculateCart();
+      saveCart();
+    } else {
+      productName.quantity--;
+      displayCartItems();
+      calculateCart();
+      saveCart();
+    }
+  } else {
+    return;
+  }
+}
+
 // Check if cart is empty and display empty text
 export function isCartEmpty() {
   const cartContainer = document.querySelector(".cart-container");
@@ -237,6 +271,10 @@ document.addEventListener("click", (event) => {
 
 const deleteBtn = document.querySelector(".cart-container");
 if (deleteBtn) {
-  deleteBtn.addEventListener("click", deleteCartItem);
+  deleteBtn.addEventListener("click", (event) => {
+    deleteCartItem(event);
+    addRemoveAmount(event);
+  });
 }
+
 openCloseMenu();
