@@ -13,6 +13,8 @@ import {
   displayMessage,
   cartMessage,
   openCloseMenu,
+  checkUserLoggedin,
+  logOut,
 } from "./utils.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
@@ -247,3 +249,4 @@ function showLessProducts() {
 }
 
 loadingSpinner();
+checkUserLoggedin();
