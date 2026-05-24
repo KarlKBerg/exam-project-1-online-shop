@@ -5,6 +5,8 @@ import {
   displayMessage,
   cartMessage,
   openCloseMenu,
+  checkUserLoggedin,
+  logOut,
 } from "./utils.js";
 import {
   addToCart,
@@ -166,3 +168,4 @@ const addToCartBtn = document.querySelector("#add-to-cart");
 addToCartBtn.addEventListener("click", () => {});
 */
 openCloseMenu();
+checkUserLoggedin();
