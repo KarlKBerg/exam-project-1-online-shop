@@ -143,7 +143,7 @@ function displayProduct(data) {
   infoDiv.appendChild(addToCartBtn);
   infoDiv.appendChild(shareBtn);
   if (shareBtn) {
-    shareBtn.addEventListener("click", copyUrl(shareBtn));
+    shareBtn.addEventListener("click", () => copyUrl(shareBtn));
   }
   // Review
   document.querySelector(".reviews h2").textContent =
