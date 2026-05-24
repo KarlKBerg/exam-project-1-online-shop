@@ -7,6 +7,7 @@ import {
   openCloseMenu,
   checkUserLoggedin,
   logOut,
+  copyUrl,
 } from "./utils.js";
 import {
   addToCart,
@@ -107,6 +108,10 @@ function displayProduct(data) {
       window.location.href = "../account/login.html";
     });
   }
+  const shareBtn = document.createElement("a");
+  shareBtn.classList.add("fa-solid", "fa-share");
+  shareBtn.setAttribute("aria-label", "Share button");
+
   // Product
   productContainer.appendChild(img);
   productContainer.appendChild(infoDiv);
@@ -136,6 +141,10 @@ function displayProduct(data) {
     priceDiv.appendChild(noSalePrice);
   }
   infoDiv.appendChild(addToCartBtn);
+  infoDiv.appendChild(shareBtn);
+  if (shareBtn) {
+    shareBtn.addEventListener("click", copyUrl(shareBtn));
+  }
   // Review
   document.querySelector(".reviews h2").textContent =
     `Reviews (${data.reviews.length})`;
