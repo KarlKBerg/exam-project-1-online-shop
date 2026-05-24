@@ -8,23 +8,15 @@ import {
   topRatedProducts,
   onSale,
   topRated,
-  dontMissOut,
-  similarProducts,
   displayMessage,
-  cartMessage,
   openCloseMenu,
   checkUserLoggedin,
-  logOut,
 } from "./utils.js";
 const API_BASE = "https://v2.api.noroff.dev/";
 const API_PATH = "online-shop";
 const API = API_BASE + API_PATH;
 
-const PARAMS = new URLSearchParams(window.location.search);
-const ID = PARAMS.get("id");
-
 let allProducts = [];
-let favourites = [];
 // Carousel
 let carouselProducts = [];
 let slideIndex = 1;
@@ -54,6 +46,7 @@ async function fetchProducts() {
     renderSlider(topRated, "top-rated");
     renderSlider(onSale, "on-sale");
     slideButtons();
+    console.log(allProducts);
   }
 }
 
