@@ -227,3 +227,17 @@ export function logOut() {
   localStorage.removeItem("userToken");
   window.location.href = "/account/login.html";
 }
+
+export async function copyUrl(btn) {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    btn.classList.remove("fa-share");
+    btn.classList.add("fa-check");
+    setTimeout(() => {
+      btn.classList.remove("fa-check");
+      btn.classList.add("fa-share");
+    }, 2000);
+  } catch (error) {
+    displayMessage("Error copying link", "error");
+  }
+}
