@@ -199,22 +199,27 @@ export function openCloseMenu() {
 export function checkUserLoggedin() {
   if (localStorage.userToken) {
     const loginBtn = document.querySelector(".login-nav-btn");
-    loginBtn.innerHTML = "";
     const mobileLoginBtn = document.querySelector(".mobile-login-nav-btn");
-    mobileLoginBtn.innerHTML = "";
-    const icon = document.createElement("i");
-    icon.classList.add("fa-solid", "fa-arrow-right-from-bracket");
-    const text = document.createElement("p");
-    text.textContent = "Log out";
-    const mobileText = document.createElement("p");
-    mobileText.textContent = "Log out";
+    const addToCartBtn = document.querySelector(".info-div");
+    if (loginBtn) {
+      loginBtn.innerHTML = "";
+      const icon = document.createElement("i");
+      icon.classList.add("fa-solid", "fa-arrow-right-from-bracket");
+      const text = document.createElement("p");
+      text.textContent = "Log out";
 
-    loginBtn.appendChild(icon);
-    loginBtn.appendChild(text);
-    mobileLoginBtn.appendChild(mobileText);
+      loginBtn.appendChild(icon);
+      loginBtn.appendChild(text);
+      loginBtn.addEventListener("click", logOut);
+    }
+    if (mobileLoginBtn) {
+      mobileLoginBtn.innerHTML = "";
+      const mobileText = document.createElement("p");
+      mobileText.textContent = "Log out";
 
-    loginBtn.addEventListener("click", logOut);
-    mobileLoginBtn.addEventListener("click", logOut);
+      mobileLoginBtn.appendChild(mobileText);
+      mobileLoginBtn.addEventListener("click", logOut);
+    }
   }
 }
 
