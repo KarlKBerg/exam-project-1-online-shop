@@ -498,6 +498,9 @@ footer ul a:hover {
 .check i {
   color: red;
 }
+.check-success {
+  color: var(--green-accent);
+}
 /* ==== CART ==== */
 .cart-container {
   margin-top: 4rem;
