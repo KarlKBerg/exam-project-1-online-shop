@@ -60,10 +60,6 @@ export const sliderPositions = {
 };
 export const onSale = [];
 export const topRated = [];
-export const dontMissOut = [];
-export const similarProducts = [];
-const onSaleSlider = document.getElementById("on-sale");
-const topRatedSlider = document.getElementById("top-rated");
 
 export function renderSlider(type, id) {
   const container = document.querySelector(`#${id} .slider-track`);
