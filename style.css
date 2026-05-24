@@ -780,6 +780,27 @@ footer ul a:hover {
 .hidden {
   display: none;
 }
+.fa-share {
+  border: 1px solid white;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.fa-share:hover {
+  color: var(--cyan-accent);
+  cursor: pointer;
+}
+.fa-check {
+  border: 1px solid white;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: var(--green-accent);
+}
 .add-to-cart-btn {
   font-size: 2.4rem;
   font-weight: 600;
