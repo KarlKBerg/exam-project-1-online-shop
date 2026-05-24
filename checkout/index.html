@@ -50,7 +50,7 @@
           <i class="fa-regular fa-heart"></i>
           <p class="nav-desc">Favourites</p>
         </a>
-        <a class="nav-item" href="../account/login.html">
+        <a class="nav-item login-nav-btn" href="../account/login.html">
           <i class="fa-regular fa-user"></i>
           <p class="nav-desc">Login</p>
         </a>
@@ -73,7 +73,10 @@
         <a class="mobile-nav-item" href="../favourites/index.html">
           <p class="nav-desc">Favourites</p>
         </a>
-        <a class="mobile-nav-item" href="../account/login.html">
+        <a
+          class="mobile-nav-item mobile-login-nav-btn"
+          href="../account/login.html"
+        >
           <p class="nav-desc">Login</p>
         </a>
         <a class="mobile-nav-item" href="../cart/cart.html">
@@ -100,18 +103,18 @@
             <form action="#">
               <div class="delivery-input">
                 <label for="name">Name</label>
-                <input type="text" name="name" />
+                <input type="text" name="name" required />
               </div>
               <div class="delivery-input">
                 <div class="delivery-heading">
                   <label for="phone">Phone</label>
                   <i class="fa-regular fa-circle-question"></i>
                 </div>
-                <input type="number" name="phone" />
+                <input type="number" name="phone" required />
               </div>
               <div class="delivery-input">
                 <label for="street-address">Street address</label>
-                <input type="text" name="street-address" />
+                <input type="text" name="street-address" required />
               </div>
               <div class="zip-city">
                 <div class="delivery-input">
@@ -119,11 +122,11 @@
                     <label for="zip">Zip</label>
                     <i class="fa-regular fa-circle-question"></i>
                   </div>
-                  <input type="number" name="zip" />
+                  <input type="number" name="zip" required />
                 </div>
                 <div class="delivery-input">
                   <label for="city">City</label>
-                  <input type="text" name="city" />
+                  <input type="text" name="city" required />
                 </div>
               </div>
             </form>
