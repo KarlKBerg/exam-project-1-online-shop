@@ -20,6 +20,7 @@
     <!-- ==== LINKS ==== -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../js/login.js"></script>
     <script type="module" src="../js/search.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Login</title>
@@ -80,19 +81,25 @@
     </header>
     <!-- ==== END HEADER ==== -->
     <!-- ==== MAIN ==== -->
-    <main>
+    <main class="loading-main">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <p>Loading</p>
+      </div>
+    </main>
+    <main class="main">
       <div class="message-container hidden"></div>
       <section class="login">
         <h1 class="section-heading">Login</h1>
         <form action="#">
           <div class="email">
             <label for="email">Email</label>
-            <input type="email" name="email" required />
+            <input type="email" name="email" id="email" required />
           </div>
 
           <div class="psw">
             <label for="password">Password</label>
-            <input type="password" name="password" required />
+            <input type="password" name="password" id="password" required />
           </div>
 
           <div class="checkbox">
@@ -103,7 +110,7 @@
         <a href="register.html"
           >Don't have an account?<span id="register-text">Register</span></a
         >
-        <a href="../index.html" class="login-btn">Login</a>
+        <a href="#" class="login-btn">Login</a>
       </section>
     </main>
     <!-- ==== END MAIN ==== -->
