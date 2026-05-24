@@ -195,3 +195,30 @@ export function openCloseMenu() {
     button.classList.toggle("hidden");
   });
 }
+
+export function checkUserLoggedin() {
+  if (localStorage.userToken) {
+    const loginBtn = document.querySelector(".login-nav-btn");
+    loginBtn.innerHTML = "";
+    const mobileLoginBtn = document.querySelector(".mobile-login-nav-btn");
+    mobileLoginBtn.innerHTML = "";
+    const icon = document.createElement("i");
+    icon.classList.add("fa-solid", "fa-arrow-right-from-bracket");
+    const text = document.createElement("p");
+    text.textContent = "Log out";
+    const mobileText = document.createElement("p");
+    mobileText.textContent = "Log out";
+
+    loginBtn.appendChild(icon);
+    loginBtn.appendChild(text);
+    mobileLoginBtn.appendChild(mobileText);
+
+    loginBtn.addEventListener("click", logOut);
+    mobileLoginBtn.addEventListener("click", logOut);
+  }
+}
+
+export function logOut() {
+  localStorage.removeItem("userToken");
+  window.location.href = "/account/login.html";
+}
