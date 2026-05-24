@@ -21,7 +21,6 @@ async function registerUser() {
   };
   loadingSpinner();
   try {
-    console.log(newUser);
     const response = await fetch(url, postData);
 
     if (!response.ok) {
