@@ -20,6 +20,7 @@
     <!-- ==== LINKS ==== -->
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../js/register.js"></script>
     <script type="module" src="../js/search.js"></script>
     <!-- ==== TITLE ==== -->
     <title>ShopMe | Register</title>
@@ -81,27 +82,38 @@
     </header>
     <!-- ==== END HEADER ==== -->
     <!-- ==== MAIN ==== -->
-    <main>
+    <main class="loading-main">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <p>Loading</p>
+      </div>
+    </main>
+    <main class="main">
       <div class="message-container hidden"></div>
       <section class="register">
         <h1 class="section-heading">Register</h1>
         <form action="#">
           <div class="name">
             <label for="name">Name *</label>
-            <input type="text" name="name" required />
+            <input type="text" name="name" id="name" required />
           </div>
           <div class="email">
             <label for="email">Email *</label>
-            <input type="email" name="email" required />
+            <input type="email" name="email" id="email" required />
           </div>
 
           <div class="psw">
             <label for="password">Password *</label>
-            <input type="password" name="password" required />
+            <input type="password" name="password" id="password" required />
           </div>
           <div class="psw">
             <label for="re-password">Re-enter password *</label>
-            <input type="password" name="re-password" required />
+            <input
+              type="password"
+              name="re-password"
+              id="re-password"
+              required
+            />
           </div>
         </form>
 
@@ -110,17 +122,17 @@
             <i class="fa-solid fa-circle"></i>
             <p>Email must contain @stud.noroff.no</p>
           </div>
-          <div class="check" id="psw-check-special">
-            <i class="fa-solid fa-circle"></i>
-            <p>Password must contain special characters</p>
-          </div>
           <div class="check" id="psw-check-char">
             <i class="fa-solid fa-circle"></i>
             <p>Password must contain 8 or more characters</p>
           </div>
+          <div class="check" id="psw-check-match">
+            <i class="fa-solid fa-circle"></i>
+            <p>Passwords must match</p>
+          </div>
         </div>
-        <a href="../index.html" class="register-btn">Register</a>
-        <a href="register.html"
+        <a href="#" class="register-btn">Register</a>
+        <a href="login.html"
           >Already have an account?<span id="login-text">Login</span></a
         >
       </section>
